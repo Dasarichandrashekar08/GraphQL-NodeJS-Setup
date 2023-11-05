@@ -1,0 +1,32 @@
+extend type Mutation {
+  studentCreate(record: StudentCreateInput!): Student
+  studentUpdate(record: StudentUpdateInput!, id: ID!): Student
+  studentDelete(id: ID!): Boolean
+}
+
+extend type Query {
+  studentFindById(Id: ID!): Student
+  studentFindByName(name: String!): Student
+}
+
+type Student @key(fields: "id") {
+  id: ID!
+  name: String
+  age: Int
+  sex: String
+  address: String
+}
+
+input StudentCreateInput {
+  name: String
+  age: Int
+  sex: String
+  address: String
+}
+
+input StudentUpdateInput {
+  name: String
+  age: Int
+  sex: String
+  address: String
+}
