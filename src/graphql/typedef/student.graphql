@@ -5,7 +5,7 @@ extend type Mutation {
 }
 
 extend type Query {
-  studentFindById(Id: ID!): Student
+  studentFindById(id: ID!): Student
   studentFindByName(name: String!): Student
 }
 

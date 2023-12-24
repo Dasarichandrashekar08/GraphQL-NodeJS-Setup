@@ -23,13 +23,13 @@ export default {
 
 export const studentFindById=async(parent,{id},{models}:IContext,info) => {
     logger.info(`studentFindById: ${id}`);
-    const student=await models.Student.findOne({where:{id},attributes:getAttributes(info,models.Student)})
+    const student=await models.Student.findOne({where:{id}})
     return student;
 }
 
 export const studentFindByName=async(parent,{name},{models}:IContext,info) => {
     logger.info(`studentFindByName: ${name}`);
-    const student=await models.Student.findOne({where:{name},attributes:getAttributes(info,models.Student)})
+    const student=await models.Student.findOne({where:{name}})
     return student;
 }
 
